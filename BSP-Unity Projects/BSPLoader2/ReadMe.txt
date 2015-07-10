@@ -1,0 +1,6 @@
+1. 可见区域的生成
+通过遍历BSP树并经过视景体和背面剔除生成可见的BSP Leaf，代表当前相机中潜在的可见BSP Leaf
+2. 可见数据的组织
+得到许多可见的BSP Leaf后，接下来要做的是，将数据提交给图形引擎进行渲染，本项目中采用的方法是，将整个场景作为一个Unity
+的GameObject。将各个leaf分别构建一个GameObject并为其绑定Mesh，leaf中的各个face则作为SubMesh赋给leaf对象绑定的Mesh，最后将
+Leaf GameObject添加为场景GameObject的子对象
